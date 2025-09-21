@@ -1,0 +1,9 @@
+{
+  "nitro": {
+    "scheduledTasks": {
+      "* * * * *": [
+        "cms:test"
+      ]
+    }
+  }
+}
