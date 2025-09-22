@@ -12,8 +12,8 @@ const queryBy = ref<string>('') // 用于搜索的字段
 const sortBy = ref<string>('')
 async function searchBooks() {
 
-  results.value = await $fetch('/api/collections/comments/search', {
-    params: { q: query.value, query_by: `content`, }
+  results.value = await $fetch('/api/collections/actors/search', {
+    params: { q: query.value, query_by: `name,embeding`,exclude_fields:"embeding",'sort_by':'_text_match:desc,_vector_distance:asc', }
   })
 }
 const updateTask = async() => {

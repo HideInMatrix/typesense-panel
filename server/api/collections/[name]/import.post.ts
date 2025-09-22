@@ -17,7 +17,6 @@ export default defineEventHandler(async (event) => {
     .collections(name)
     .documents()
     .import(content,{action:'upsert'})
-
   return { ok: true, result }
 })
 

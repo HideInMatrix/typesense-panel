@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const jieba = Jieba.withDict(dict)
   let query_keyword = (query as {q:string}).q
   let _query = jieba.cut(query_keyword,false)
-  query.q = _query
+  query.q = _query.join(",")
   const client = await getTypesenseClient()
   try {
     const results = await client
