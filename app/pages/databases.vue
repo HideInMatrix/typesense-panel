@@ -90,7 +90,7 @@ async function saveConfig() {
   try {
     if (editingConfig.value) {
       // 更新配置
-      await $fetch(`/api/database/configs/${editingConfig.value.id}`, {
+      await $fetch(`/api/database/${editingConfig.value.id}`, {
         method: "PUT",
         body: form,
       });
@@ -123,7 +123,7 @@ async function deleteConfig(config: AnyDatabaseConfig) {
       }
     );
 
-    await $fetch(`/api/database/configs/${config.id}`, {
+    await $fetch(`/api/database/${config.id}`, {
       method: "DELETE",
     });
     ElMessage.success("删除成功");
