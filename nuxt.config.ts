@@ -25,18 +25,17 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       websiteName: process.env.NUXT_WEB_SITE_NAME,
-      baseURL: process.env.NUXT_BASE_URL || "http://localhost:3000",
     },
   },
   nitro: {
-    // storage: {
-    //   data:
-    //     process.env.NODE_ENV === "development"
-    //       ? undefined
-    //       : {
-    //           driver: "vercelRuntimeCache",
-    //         },
-    // },
+    storage: {
+      data:
+        process.env.NODE_ENV === "development"
+          ? undefined
+          : {
+              driver: "vercelRuntimeCache",
+            },
+    },
     experimental: {
       tasks: true,
     },
