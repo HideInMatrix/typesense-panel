@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     storage: {
       data: {
         driver: "fs",
+        base: "./.data/kv",
       },
     },
     experimental: {
