@@ -29,7 +29,7 @@
 
 ## 技术栈
 
-- **前端**: Nuxt 3 + Vue 3 + TypeScript
+- **前端**: Nuxt 4 + Vue 3 + TypeScript
 - **UI 库**: Element Plus + UnoCSS
 - **后端**: Nitro (Nuxt Server)
 - **数据库**: 支持多种数据库类型
