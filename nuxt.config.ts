@@ -29,12 +29,11 @@ export default defineNuxtConfig({
   },
   nitro: {
     storage: {
-      data:
-        process.env.NODE_ENV === "development"
-          ? undefined
-          : {
-              driver: "vercelRuntimeCache",
-            },
+      data: {
+        driver: "vercel-blob",
+        access: "public",
+        token: process.env.NUXT_READ_WRITE_TOKEN,
+      },
     },
     experimental: {
       tasks: true,

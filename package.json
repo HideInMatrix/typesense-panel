@@ -27,6 +27,7 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@node-rs/jieba": "^2.0.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@vercel/blob": "^2.0.0",
     "dayjs": "^1.11.13",
     "element-plus": "^2.8.8",
     "mariadb": "^3.3.1",
