@@ -3,7 +3,7 @@ import type { ConfigurationOptions } from "typesense/lib/Typesense/Configuration
 
 async function loadConfig(): Promise<ConfigurationOptions> {
   // 服务器端读取持久化配置；客户端调用时走服务端 API
-  if (import.meta.server) {
+  if (import.meta.server && typeof useStorage !== "undefined") {
     const storage = useStorage("data");
     const saved = (await storage.getItem("typesense:config")) as any;
     if (saved?.nodes && saved?.apiKey) return saved as ConfigurationOptions;
@@ -37,7 +37,11 @@ export async function testTypesenseConnection(
 ): Promise<{ success: boolean; message: string }> {
   try {
     const client = new Typesense.Client(config);
-    await client.health.retrieve();
+    const result = await client.health.retrieve();
+    if (result?.ok !== true) {
+      throw new Error("Health check failed");
+    }
+    await client.collections().retrieve();
     return { success: true, message: "连接成功" };
   } catch (err: any) {
     return { success: false, message: err?.message || "连接失败" };

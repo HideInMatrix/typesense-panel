@@ -28,14 +28,14 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    storage: {
-      data:
-        process.env.NODE_ENV === "development"
-          ? undefined
-          : {
-              driver: "vercelRuntimeCache",
-            },
-    },
+    // storage: {
+    //   data:
+    //     process.env.NODE_ENV === "development"
+    //       ? undefined
+    //       : {
+    //           driver: "vercelRuntimeCache",
+    //         },
+    // },
     experimental: {
       tasks: true,
     },
