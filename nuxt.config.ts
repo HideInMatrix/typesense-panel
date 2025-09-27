@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   nitro: {
     storage: {
       data: {
-        driver: "vercel-kv",
+        driver: "fs",
       },
     },
     experimental: {
