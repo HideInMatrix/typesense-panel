@@ -47,7 +47,7 @@ async function createCollection() {
 
 
 async function refreshList() {
-  const _collections = await $fetch('/api/collections/all', { method: 'GET' })
+  const {result: _collections} = await $fetch('/api/collections/all', { method: 'GET' })
   collections.value = _collections
 }
 
